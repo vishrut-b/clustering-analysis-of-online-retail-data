@@ -78,15 +78,13 @@ K-Means is chosen for this project because:
 #### Mathematical Objective:
 K-Means minimizes the **Within-Cluster Sum of Squares (WCSS)**:
 
-$$
-WCSS = \sum_{i=1}^{k} \sum_{x \in C_i} \|x - \mu_i\|^2
-$$
+$$WCSS = \sum_{i=1}^{k} \sum_{x \in C_i} \| x - \mu_i \|^2$$
 
 Where:
-- \( k \): Number of clusters  
-- \( C_i \): Cluster \( i \)  
-- \( \mu_i \): Centroid of cluster \( i \)  
-- \( x \): Data point  
+- k: Number of clusters  
+- $C_{i}$: Cluster \( i \)  
+- $\mu_{i}$: Centroid of cluster \( i \)  
+- x: Data point  
 
 #### Silhouette Score:
 The **Silhouette Score** evaluates the quality of clustering by comparing intra-cluster and inter-cluster distances. It ranges from \(-1\) to \(1\):
