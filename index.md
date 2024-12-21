@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # Customer Segmentation Project Using K-Means Clustering
 
 ## Table of Contents
