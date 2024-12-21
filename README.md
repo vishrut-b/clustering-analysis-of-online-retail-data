@@ -1,4 +1,4 @@
-## 📊 Online Retail Data Analysis using KMeans Clustering
+## 📊 Customer Segmentation using KMeans Clustering
 
 Welcome to the Online Retail Data Analysis project! This repository showcases data preprocessing, customer segmentation, and clustering using the KMeans algorithm.
 
