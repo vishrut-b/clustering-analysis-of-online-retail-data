@@ -1,9 +1,10 @@
-title: My Project
-description: > 
+title: "Customer Segmentation with KMeans Clustering"
+theme: jekyll-theme-minimal
+
+description: >
   A short description of your project
 
-# Use Jekyll's built-in kramdown engine
-# which can handle math with the right settings
+# Use Jekyll's built-in Kramdown engine, which can handle math
 markdown: kramdown
 
 kramdown:
