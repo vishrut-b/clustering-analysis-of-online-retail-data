@@ -1,9 +1,14 @@
-title : Customer Segmentation with KMeans Clustering
-theme : jekyll-theme-minimal
+title: My Project
+description: > 
+  A short description of your project
+
+# Use Jekyll's built-in kramdown engine
+# which can handle math with the right settings
 markdown: kramdown
+
 kramdown:
-  input: GFM
-  math_engine: mathjax
+  input: GFM            # GitHub Flavored Markdown
+  math_engine: mathjax  # Render math using MathJax
   math_engine_opts:
-    # If you are using MathJax CDN
-    server: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
+    # Load MathJax from a CDN (JSDelivr, UNPKG, Cloudflare, etc.)
+    server: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
