@@ -77,9 +77,11 @@ K-Means is chosen for this project because:
 
 #### Mathematical Objective:
 K-Means minimizes the **Within-Cluster Sum of Squares (WCSS)**:
+
 {% raw %}
 $$WCSS = \sum_{i=1}^{k} \sum_{x \in C_i} \| x - \mu_i \|^2$$
-{% raw %}
+{% endraw %}
+
 Where:
 - k: Number of clusters  
 - $C_{i}$: Cluster \( i \)  
