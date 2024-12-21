@@ -8,7 +8,7 @@
     - [Why K-Means Clustering?](#why-k-means-clustering)
     - [Understanding the Algorithm](#understanding-the-algorithm)
 5. [Methodology](#methodology)
-    - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-(eda))
+    - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis)
     - [Data Cleaning](#data-cleaning)
     - [Feature Engineering](#feature-engineering)
     - [Data Scaling and Preprocessing](#data-scaling-and-preprocessing)
@@ -69,21 +69,21 @@ K-Means is chosen for this project because:
    - Repeat steps 2 and 3 until the centroids no longer change significantly or a predefined number of iterations is reached.
 
 #### Mathematical Objective:
-K-Means minimizes the **Within-Cluster Sum of Squares (WCSS)**:<br>
-
-$$WCSS = \sum_{i=1}^{k}\sum_{x \in C_i}||x - \mu_i||^2$$<br>
-
+K-Means minimizes the **Within-Cluster Sum of Squares (WCSS)**:
+\[
+WCSS = \sum_{i=1}^{k}\sum_{x \in C_i}||x - \mu_i||^2
+\]
 Where:
-- $k$: Number of clusters
-- $C_{i}$: Cluster \(i\)
-- $\mu_{i}$: Centroid of cluster $i$
-- $x$: Data point
+- \(k\): Number of clusters
+- \(C_i\): Cluster \(i\)
+- \(\mu_i\): Centroid of cluster \(i\)
+- \(x\): Data point
 
 #### Silhouette Score:
 The **Silhouette Score** evaluates the quality of clustering by comparing intra-cluster and inter-cluster distances. It ranges from -1 to 1:
-
-$$S(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}$$<br>
-
+\[
+S(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
+\]
 Where:
 - \(a(i)\): Average distance between \(i\) and other points in the same cluster.
 - \(b(i)\): Average distance between \(i\) and points in the nearest cluster.
@@ -120,7 +120,9 @@ EDA involved:
 
 ### Data Scaling and Preprocessing
 - Used **StandardScaler** to normalize features (`Monetary Value`, `Frequency`, `Recency`) with Z-score scaling:
-$Z = \frac{X - \mu}{\sigma}$
+\[
+Z = \frac{X - \mu}{\sigma}
+\]
 
 ### Clustering Process
 1. **Optimal K Selection**:
