@@ -6,10 +6,9 @@ description: >
 
 # Use Jekyll's built-in Kramdown engine to handle math.
 markdown: kramdown
-
 kramdown:
-  input: GFM            # GitHub Flavored Markdown
-  math_engine: mathjax  # Render math using MathJax
+  input: GFM
+  math_engine: mathjax
   math_engine_opts:
     server: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
     
