@@ -144,10 +144,10 @@ EDA involved:
 
 | **Cluster** | **Characteristics**                       | **Description**                                                      |
 |-------------|-------------------------------------------|----------------------------------------------------------------------|
-| `**0**`       | High-value, frequent buyers               | Regular buyers with high spending.                                   |
-| `**1**`       | Infrequent, low-value customers           | Customers who purchase sporadically.                                 |
-| `**2**`       | New or low-engagement customers           | Customers with low spending but recent activity.                     |
-| `**3**`       | Loyal, high-frequency, high-value buyers  | The most valuable customers in terms of revenue and engagement.      |
+| `0`       | High-value, frequent buyers               | Regular buyers with high spending.                                   |
+| `1`       | Infrequent, low-value customers           | Customers who purchase sporadically.                                 |
+| `2`       | New or low-engagement customers           | Customers with low spending but recent activity.                     |
+| `3`       | Loyal, high-frequency, high-value buyers  | The most valuable customers in terms of revenue and engagement.      |
 
 ---
 
