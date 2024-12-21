@@ -4,15 +4,12 @@
   <meta charset="UTF-8">
   <title>{{ page.title | default: site.title }}</title>
 
-  <!-- Inject MathJax only if kramdown.math_engine == "mathjax" -->
+  <!-- Inject MathJax only if kramdown.math_engine == 'mathjax' -->
   {% if site.kramdown.math_engine == 'mathjax' %}
     <script src="{{ site.kramdown.math_engine_opts.server }}"></script>
   {% endif %}
-  
-  <!-- Add any other head tags or CSS here -->
 </head>
 <body>
   {{ content }}
 </body>
 </html>
-
