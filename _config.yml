@@ -3,7 +3,7 @@ theme: jekyll-theme-minimal
 
 description: >
   A short description of your project
-
+markdown: kramdown
 kramdown:
   input: GFM
   math_engine: mathjax # you can also set this field to 'katex'
