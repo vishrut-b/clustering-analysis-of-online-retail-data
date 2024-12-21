@@ -4,12 +4,11 @@ theme: jekyll-theme-minimal
 description: >
   A short description of your project
 
-# Use Jekyll's built-in Kramdown engine, which can handle math
+# Use Jekyll's built-in Kramdown engine to handle math.
 markdown: kramdown
 
 kramdown:
   input: GFM            # GitHub Flavored Markdown
   math_engine: mathjax  # Render math using MathJax
   math_engine_opts:
-    # Load MathJax from a CDN (JSDelivr, UNPKG, Cloudflare, etc.)
     server: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
