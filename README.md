@@ -1,71 +1,186 @@
-## 📊 Customer Segmentation using KMeans Clustering
+# Customer Segmentation Project Using K-Means Clustering
 
-Welcome to the Online Retail Data Analysis project! This repository showcases data preprocessing, customer segmentation, and clustering using the KMeans algorithm.
+## Table of Contents
+1. [Overview](#overview)
+2. [Dataset Description](#dataset-description)
+3. [Objective](#objective)
+4. [Theoretical Background](#theoretical-background)
+    - [Why K-Means Clustering?](#why-k-means-clustering)
+    - [Understanding the Algorithm](#understanding-the-algorithm)
+5. [Methodology](#methodology)
+    - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis)
+    - [Data Cleaning](#data-cleaning)
+    - [Feature Engineering](#feature-engineering)
+    - [Data Scaling and Preprocessing](#data-scaling-and-preprocessing)
+    - [Clustering Process](#clustering-process)
+6. [Key Results](#key-results)
+7. [Customer Segmentation Strategies](#customer-segmentation-strategies)
+8. [Conclusion](#conclusion)
 
-### 📁 Project Overview
-This project involves analyzing online retail transaction data. The goal is to segment customers based on their purchase behavior using clustering techniques.
+---
 
-### 🚀 Key Features
-- **Data Cleaning:** Removal of outliers, missing values, and invalid records.
-- **Feature Engineering:** Creation of meaningful features like monetary value, purchase frequency, and recency.
-- **Clustering Analysis:** Implementation of KMeans clustering to identify distinct customer groups.
+## Overview
+This project utilizes K-Means clustering, an unsupervised machine learning algorithm, to segment customers based on their purchasing behavior. By understanding customer profiles, businesses can tailor their strategies to boost customer satisfaction, loyalty, and revenue.
 
-### 🛠️ Tech Stack
-- **Languages:** Python
-- **Libraries:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
+## Dataset Description
+The dataset contains transaction records for an online retailer based in the UK, spanning two business years.
 
-### 📈 Methodology
-1. **Exploratory Data Analysis (EDA):** Initial inspection and visualization.
-2. **Data Cleaning:** Removing inconsistencies and irrelevant records.
-3. **Feature Engineering:** Creating and scaling important features.
-4. **Clustering:** Using KMeans with the elbow method and silhouette score.
-5. **Results Interpretation:** Defining customer segments and recommending targeted strategies.
+| **Feature**       | **Description**                                                                 |
+|--------------------|---------------------------------------------------------------------------------|
+| `InvoiceNo`       | Unique 6-digit identifier for each transaction. Cancellation codes start with 'C'. |
+| `StockCode`       | Unique code assigned to each product.                                           |
+| `Description`     | Name of the product.                                                           |
+| `Quantity`        | Number of units purchased in a transaction.                                     |
+| `InvoiceDate`     | Date and time of the transaction.                                               |
+| `UnitPrice`       | Price per unit in GBP (£).                                                  |
+| `CustomerID`      | Unique identifier for each customer.                                            |
+| `Country`         | Country where the customer resides.                                             |
 
-### 📊 Key Code Snippets
-#### KMeans Clustering Implementation
-```python
-from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score
+---
 
-# Determine optimal number of clusters
-max_k = 12
-inertia = []
-silhouette_scores = []
+## Objective
+The primary goals of this project are:
+- To identify meaningful customer groups based on purchasing behavior.
+- To understand the characteristics of each customer segment.
+- To provide actionable insights for improving marketing and customer engagement strategies.
 
-for k in range(2, max_k + 1):
-    kmeans = KMeans(n_clusters=k, random_state=42, max_iter=1000)
-    cluster_labels = kmeans.fit_predict(scaled_data_df)
-    inertia.append(kmeans.inertia_)
-    silhouette_scores.append(silhouette_score(scaled_data_df, cluster_labels))
-```
+---
 
-#### Fitting the Model
-```python
-# Applying KMeans with optimal clusters
-kmeans = KMeans(n_clusters=4, random_state=42, max_iter=1000)
-cluster_labels = kmeans.fit_predict(scaled_data_df)
-primary_df['cluster'] = cluster_labels
-```
+## Theoretical Background
 
-### 📊 Results
-The following customer clusters were identified:
-- **Cluster 0 - "Fidéliser":** High-value, frequent customers.
-- **Cluster 1 - "Réengager":** Infrequent, low-value customers.
-- **Cluster 2 - "Nourrir":** New or low-activity customers.
-- **Cluster 3 - "Récompenser":** Loyal, high-spending customers.
+### Why K-Means Clustering?
+K-Means is chosen for this project because:
+1. **Efficiency**: K-Means works well with large datasets and provides quick clustering results.
+2. **Scalability**: It can handle a variety of data sizes and complexities.
+3. **Interpretability**: The results are easy to visualize and interpret, especially for customer segmentation tasks.
+4. **Versatility**: It works well with numerical data, which is predominant in this dataset.
 
-### 📚 Learnings
-- Data preprocessing and feature scaling.
-- Effective clustering and model evaluation.
-- Customer segmentation using real-world business data.
+### Understanding the Algorithm
 
-### 💡 Future Enhancements
-- Use advanced clustering methods (e.g., DBSCAN, hierarchical clustering).
-- Implement automated data cleaning pipelines.
-- Build a dashboard for interactive results visualization.
+#### Steps in K-Means Clustering:
+1. **Initialization**:
+   - Choose the number of clusters (‘k’).
+   - Randomly initialize cluster centroids.
+2. **Assignment Step**:
+   - Assign each data point to the nearest centroid using the Euclidean distance.
+3. **Update Step**:
+   - Recalculate the centroids by taking the mean of all points assigned to a cluster.
+4. **Convergence**:
+   - Repeat steps 2 and 3 until the centroids no longer change significantly or a predefined number of iterations is reached.
 
-### 📧 Contact
-Feel free to connect via [LinkedIn](www.linkedin.com/in/vishrut-bezbarua-53b355205) or reach out via [email](vishrutbezbarua@gmail.com).
+#### Mathematical Objective:
+K-Means minimizes the **Within-Cluster Sum of Squares (WCSS)**:<br>
 
-**Thank you for visiting this repository! ⭐ Feel free to fork and contribute!**
+$$WCSS = \sum_{i=1}^{k}\sum_{x \in C_i}||x - \mu_i||^2$$<br>
+
+Where:
+- $k$: Number of clusters
+- $C_{i}$: Cluster \(i\)
+- $\mu_{i}$: Centroid of cluster $i$
+- $x$: Data point
+
+#### Silhouette Score:
+The **Silhouette Score** evaluates the quality of clustering by comparing intra-cluster and inter-cluster distances. It ranges from -1 to 1:
+
+$$S(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}$$<br>
+
+Where:
+- \(a(i)\): Average distance between \(i\) and other points in the same cluster.
+- \(b(i)\): Average distance between \(i\) and points in the nearest cluster.
+
+---
+
+## Methodology
+
+### Exploratory Data Analysis (EDA)
+EDA involved:
+1. Checking for null values and invalid data (e.g., negative prices).
+2. Analyzing the distribution of numerical features like `Quantity`, `UnitPrice`, and `CustomerID`.
+3. Identifying patterns in `InvoiceDate` and `Country` to uncover insights into purchasing trends.
+
+#### Observations:
+- A significant number of transactions had missing `CustomerID` values.
+- Negative or zero values in `Quantity` and `UnitPrice` indicated potential errors or special promotions.
+
+### Data Cleaning
+1. **Removing Invalid Entries**:
+   - Dropped rows with missing `CustomerID`.
+   - Excluded transactions with negative or zero `Quantity` and `UnitPrice`.
+2. **Processing Categorical Variables**:
+   - Cleaned `StockCode` by removing non-product entries like "ADJUST" and "TEST".
+
+### Feature Engineering
+1. **Created New Features**:
+   - `sales_line_total = Quantity × UnitPrice`: Total revenue per transaction.
+2. **Aggregated Data**:
+   - Grouped by `CustomerID` to calculate:
+     - **Monetary Value**: Total spending.
+     - **Frequency**: Number of unique transactions.
+     - **Recency**: Days since the last purchase.
+
+### Data Scaling and Preprocessing
+- Used **StandardScaler** to normalize features (`Monetary Value`, `Frequency`, `Recency`) with Z-score scaling:
+$Z = \frac{X - \mu}{\sigma}$
+
+### Clustering Process
+1. **Optimal K Selection**:
+   - Used the **Elbow Method** and **Silhouette Scores** to determine \(k = 4\).
+2. **K-Means Execution**:
+   - Clustered scaled data into four segments.
+
+---
+
+## Key Results
+
+### Cluster Analysis
+| **Cluster** | **Characteristics**                     | **Description**                                                      |
+|-------------|-----------------------------------------|----------------------------------------------------------------------|
+| **0**       | High-value, frequent buyers             | Regular buyers with high spending.                                   |
+| **1**       | Infrequent, low-value customers         | Customers who purchase sporadically.                                |
+| **2**       | New or low-engagement customers         | Customers with low spending but recent activity.                    |
+| **3**       | Loyal, high-frequency, high-value buyers| The most valuable customers in terms of revenue and engagement.     |
+
+---
+
+## Customer Segmentation Strategies
+
+### Cluster 0: "Retain"
+- **Rationale**: High-value customers who make frequent purchases.
+- **Actions**:
+  - Introduce loyalty programs.
+  - Provide personalized recommendations.
+
+### Cluster 1: "Re-Engage"
+- **Rationale**: Customers with sporadic and low spending patterns.
+- **Actions**:
+  - Send targeted email campaigns.
+  - Offer exclusive discounts to incentivize purchases.
+
+### Cluster 2: "Nurture"
+- **Rationale**: Recent customers with potential for growth.
+- **Actions**:
+  - Offer onboarding incentives.
+  - Provide exceptional customer service.
+
+### Cluster 3: "Reward"
+- **Rationale**: Top-performing customers in terms of revenue and frequency.
+- **Actions**:
+  - Develop a premium rewards program.
+  - Provide exclusive early access to products or events.
+
+---
+
+## Conclusion
+K-Means clustering successfully segmented customers into actionable groups. These insights can drive personalized marketing and improve overall business strategy.
+
+### Next Steps
+1. Deploy the clustering model in a production environment.
+2. Integrate segmentation results into CRM systems.
+3. Experiment with alternative clustering algorithms (e.g., Hierarchical Clustering).
+
+---
+
+## References
+- [Scikit-learn Documentation](https://scikit-learn.org/)
+- [K-Means Clustering Guide](https://en.wikipedia.org/wiki/K-means_clustering)
 
