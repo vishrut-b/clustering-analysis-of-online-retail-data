@@ -8,7 +8,7 @@
     - [Why K-Means Clustering?](#why-k-means-clustering)
     - [Understanding the Algorithm](#understanding-the-algorithm)
 5. [Methodology](#methodology)
-    - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis)
+    - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-(eda))
     - [Data Cleaning](#data-cleaning)
     - [Feature Engineering](#feature-engineering)
     - [Data Scaling and Preprocessing](#data-scaling-and-preprocessing)
