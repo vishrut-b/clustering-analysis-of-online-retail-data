@@ -8,7 +8,7 @@
     - [Why K-Means Clustering?](#why-k-means-clustering)
     - [Understanding the Algorithm](#understanding-the-algorithm)
 5. [Methodology](#methodology)
-    - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis)
+    - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
     - [Data Cleaning](#data-cleaning)
     - [Feature Engineering](#feature-engineering)
     - [Data Scaling and Preprocessing](#data-scaling-and-preprocessing)
@@ -16,6 +16,7 @@
 6. [Key Results](#key-results)
 7. [Customer Segmentation Strategies](#customer-segmentation-strategies)
 8. [Conclusion](#conclusion)
+9. [References](#references)
 
 ---
 
@@ -25,16 +26,16 @@ This project utilizes K-Means clustering, an unsupervised machine learning algor
 ## Dataset Description
 The dataset contains transaction records for an online retailer based in the UK, spanning two business years.
 
-| **Feature**       | **Description**                                                                 |
-|--------------------|---------------------------------------------------------------------------------|
-| `InvoiceNo`       | Unique 6-digit identifier for each transaction. Cancellation codes start with 'C'. |
-| `StockCode`       | Unique code assigned to each product.                                           |
-| `Description`     | Name of the product.                                                           |
-| `Quantity`        | Number of units purchased in a transaction.                                     |
-| `InvoiceDate`     | Date and time of the transaction.                                               |
-| `UnitPrice`       | Price per unit in GBP (£).                                                  |
-| `CustomerID`      | Unique identifier for each customer.                                            |
-| `Country`         | Country where the customer resides.                                             |
+| **Feature**   | **Description**                                                                 |
+|---------------|---------------------------------------------------------------------------------|
+| `InvoiceNo`   | Unique 6-digit identifier for each transaction. Cancellation codes start with 'C'. |
+| `StockCode`   | Unique code assigned to each product.                                           |
+| `Description` | Name of the product.                                                            |
+| `Quantity`    | Number of units purchased in a transaction.                                     |
+| `InvoiceDate` | Date and time of the transaction.                                               |
+| `UnitPrice`   | Price per unit in GBP (£).                                                      |
+| `CustomerID`  | Unique identifier for each customer.                                            |
+| `Country`     | Country where the customer resides.                                             |
 
 ---
 
@@ -70,23 +71,27 @@ K-Means is chosen for this project because:
 
 #### Mathematical Objective:
 K-Means minimizes the **Within-Cluster Sum of Squares (WCSS)**:
-\[
-WCSS = \sum_{i=1}^{k}\sum_{x \in C_i}||x - \mu_i||^2
-\]
+
+$$
+WCSS = \sum_{i=1}^{k} \sum_{x \in C_i} \|x - \mu_i\|^2
+$$
+
 Where:
-- \(k\): Number of clusters
-- \(C_i\): Cluster \(i\)
-- \(\mu_i\): Centroid of cluster \(i\)
-- \(x\): Data point
+- \( k \): Number of clusters  
+- \( C_i \): Cluster \( i \)  
+- \( \mu_i \): Centroid of cluster \( i \)  
+- \( x \): Data point  
 
 #### Silhouette Score:
-The **Silhouette Score** evaluates the quality of clustering by comparing intra-cluster and inter-cluster distances. It ranges from -1 to 1:
-\[
-S(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
-\]
+The **Silhouette Score** evaluates the quality of clustering by comparing intra-cluster and inter-cluster distances. It ranges from \(-1\) to \(1\):
+
+$$
+S(i) = \frac{b(i) - a(i)}{\max\{a(i), b(i)\}}
+$$
+
 Where:
-- \(a(i)\): Average distance between \(i\) and other points in the same cluster.
-- \(b(i)\): Average distance between \(i\) and points in the nearest cluster.
+- \( a(i) \): Average distance between \( i \) and other points in the same cluster.  
+- \( b(i) \): Average distance between \( i \) and points in the nearest cluster.  
 
 ---
 
@@ -120,13 +125,14 @@ EDA involved:
 
 ### Data Scaling and Preprocessing
 - Used **StandardScaler** to normalize features (`Monetary Value`, `Frequency`, `Recency`) with Z-score scaling:
-\[
-Z = \frac{X - \mu}{\sigma}
-\]
+  
+  $$
+  Z = \frac{X - \mu}{\sigma}
+  $$
 
 ### Clustering Process
 1. **Optimal K Selection**:
-   - Used the **Elbow Method** and **Silhouette Scores** to determine \(k = 4\).
+   - Used the **Elbow Method** and **Silhouette Scores** to determine \( k = 4 \).
 2. **K-Means Execution**:
    - Clustered scaled data into four segments.
 
@@ -135,12 +141,12 @@ Z = \frac{X - \mu}{\sigma}
 ## Key Results
 
 ### Cluster Analysis
-| **Cluster** | **Characteristics**                     | **Description**                                                      |
-|-------------|-----------------------------------------|----------------------------------------------------------------------|
-| **0**       | High-value, frequent buyers             | Regular buyers with high spending.                                   |
-| **1**       | Infrequent, low-value customers         | Customers who purchase sporadically.                                |
-| **2**       | New or low-engagement customers         | Customers with low spending but recent activity.                    |
-| **3**       | Loyal, high-frequency, high-value buyers| The most valuable customers in terms of revenue and engagement.     |
+| **Cluster** | **Characteristics**                       | **Description**                                                      |
+|-------------|-------------------------------------------|----------------------------------------------------------------------|
+| **0**       | High-value, frequent buyers               | Regular buyers with high spending.                                   |
+| **1**       | Infrequent, low-value customers           | Customers who purchase sporadically.                                 |
+| **2**       | New or low-engagement customers           | Customers with low spending but recent activity.                     |
+| **3**       | Loyal, high-frequency, high-value buyers  | The most valuable customers in terms of revenue and engagement.      |
 
 ---
 
@@ -185,4 +191,3 @@ K-Means clustering successfully segmented customers into actionable groups. Thes
 ## References
 - [Scikit-learn Documentation](https://scikit-learn.org/)
 - [K-Means Clustering Guide](https://en.wikipedia.org/wiki/K-means_clustering)
-
