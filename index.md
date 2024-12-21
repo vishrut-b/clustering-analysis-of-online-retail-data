@@ -1,6 +1,9 @@
 ---
 layout: default
+title: "Customer Segmentation with KMeans Clustering"
+description: "A short description of your project"
 ---
+
 # Customer Segmentation Project Using K-Means Clustering
 
 ## Table of Contents
