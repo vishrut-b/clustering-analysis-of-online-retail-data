@@ -1,0 +1,9 @@
+/* assets/css/styles.css */
+
+/* A simple container class with margins and a max width */
+.main-container {
+  margin: 2rem auto;   /* 2rem margin top/bottom, auto left/right */
+  max-width: 900px;    /* or any width you want */
+  padding: 1rem;       /* adds some space around content inside the container */
+  background-color: #ffffff; /* optional background color if desired */
+}
