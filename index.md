@@ -6,6 +6,8 @@ description: "A short description of your project"
 
 # Customer Segmentation Project Using K-Means Clustering
 
+Jupyter notebook available [here](https://github.com/vishrut-b/clustering-analysis-of-online-retail-data/blob/eb7ee2bb2b1d86d778dded687aa2826b199e165e/clustering_data_analysis.ipynb)
+
 ## Table of Contents
 1. [Overview](#overview)
 2. [Dataset Description](#dataset-description)
