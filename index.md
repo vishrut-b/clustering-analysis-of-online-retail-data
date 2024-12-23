@@ -146,7 +146,7 @@ EDA involved:
   
 2. **K-Means Execution**:
    - Clustered scaled data into four segments.
-   <img src="assets/fig5.png" alt="Elbow Method Graph" style="width:50%; display:block; margin:auto;">
+   <img src="assets/fig5.png" alt="Elbow Method Graph" style="width:70%; display:block; margin:auto;">
 ---
 ## Key Results
 
@@ -191,7 +191,8 @@ EDA involved:
 
 ## Conclusion
 K-Means clustering successfully segmented customers into actionable groups. These insights can drive personalized marketing and improve overall business strategy.
-![Description of image](assets/fig8.png)
+<img src="assets/fig8.png" alt="Elbow Method Graph" style="width:80%; display:block; margin:auto;">
+
 ### Next Steps
 1. Deploy the clustering model in a production environment.
 2. Integrate segmentation results into CRM systems.
