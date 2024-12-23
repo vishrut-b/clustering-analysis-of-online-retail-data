@@ -192,7 +192,7 @@ EDA involved:
 
 ## Conclusion
 K-Means clustering successfully segmented customers into actionable groups. These insights can drive personalized marketing and improve overall business strategy.
-![Description of image](https://github.com/vishrut-b/clustering-analysis-of-online-retail-data/blob/70d1da46514a4513ac15dc5b03fdfadf5310a4f4/_imgs/fig8.png)
+![Description of image](https://raw.githubusercontent.com/vishrut-b/clustering-analysis-of-online-retail-data/blob/70d1da46514a4513ac15dc5b03fdfadf5310a4f4/_imgs/fig8.png)
 ### Next Steps
 1. Deploy the clustering model in a production environment.
 2. Integrate segmentation results into CRM systems.
