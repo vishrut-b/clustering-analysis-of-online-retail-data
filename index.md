@@ -143,9 +143,10 @@ EDA involved:
 ### Clustering Process
 1. **Optimal K Selection**:
    - Used the **Elbow Method** and **Silhouette Scores** to determine \( k = 4 \).
+  
 2. **K-Means Execution**:
    - Clustered scaled data into four segments.
-
+![Description of image](https://github.com/vishrut-b/clustering-analysis-of-online-retail-data/blob/eb7ee2bb2b1d86d778dded687aa2826b199e165e/_imgs/fig5)
 ---
 
 ## Key Results
