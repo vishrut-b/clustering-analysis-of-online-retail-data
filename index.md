@@ -141,15 +141,15 @@ EDA involved:
   $$
 
 Where : 
-- **\( Z \):** The Z-score, representing the normalized value of the feature. It indicates how many standard deviations a particular value (\( X \)) is from the mean (\( \mu \)).
-- **\( X \):** The original value of the feature being normalized.
-- **\( \mu \):** The mean (average) value of the feature, calculated as:
+- **$Z$:** The Z-score, representing the normalized value of the feature. It indicates how many standard deviations a particular value (\( X \)) is from the mean (\( \mu \)).
+- **$X$:** The original value of the feature being normalized.
+- **$\mu$:** The mean (average) value of the feature, calculated as:
   $$
   \mu = \frac{\sum_{i=1}^{n} X_i}{n}
   $$
   where:
-  - \( n \): Number of data points.
-  - \( X_i \): Individual feature values.
+  - $n$: Number of data points.
+  - $X_i$: Individual feature values.
 
 - **\( \sigma \):** The standard deviation of the feature, measuring the spread or variability of the data around the mean, calculated as:
   $$
