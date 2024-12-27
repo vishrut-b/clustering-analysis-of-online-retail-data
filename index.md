@@ -141,7 +141,7 @@ EDA involved:
   $$
 
 Where : 
-- **$Z$:** The Z-score, representing the normalized value of the feature. It indicates how many standard deviations a particular value (\( X \)) is from the mean (\( \mu \)).
+- **$Z$:** The Z-score, representing the normalized value of the feature. It indicates how many standard deviations a particular value $X$ is from the mean $\mu$.
 - **$X$:** The original value of the feature being normalized.
 - **$\mu$:** The mean (average) value of the feature, calculated as:
   $$
@@ -158,7 +158,7 @@ Where :
 
 ### Clustering Process
 1. **Optimal K Selection**:
-   - Used the **Elbow Method** and **Silhouette Scores** to determine \( k = 4 \).
+   - Used the **Elbow Method** and **Silhouette Scores** to determine $k$ = 4.
   
 2. **K-Means Execution**:
    - Clustered scaled data into four segments.
