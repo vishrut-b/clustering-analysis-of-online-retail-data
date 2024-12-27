@@ -151,7 +151,7 @@ Where :
   - $n$: Number of data points.
   - $X_i$: Individual feature values.
 
-- **\( \sigma \):** The standard deviation of the feature, measuring the spread or variability of the data around the mean, calculated as:
+- **$\sigma$:** The standard deviation of the feature, measuring the spread or variability of the data around the mean, calculated as:
   $$
   \sigma = \sqrt{\frac{\sum_{i=1}^{n} (X_i - \mu)^2}{n}}
   $$
