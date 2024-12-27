@@ -146,7 +146,7 @@ EDA involved:
   
 2. **K-Means Execution**:
    - Clustered scaled data into four segments.
-   <img src="assets/fig5.png" alt="Elbow Method Graph" style="width:70%; display:block; margin:auto;">
+   <img src="assets/fig5.png" alt="Elbow Method Graph" style="width:80%; display:block; margin:auto;">
 ---
 ## Key Results
 
