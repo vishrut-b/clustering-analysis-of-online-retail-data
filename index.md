@@ -32,7 +32,7 @@ Jupyter notebook available [here](https://github.com/vishrut-b/clustering-analys
 This project utilizes K-Means clustering, an unsupervised machine learning algorithm, to segment customers based on their purchasing behavior. By understanding customer profiles, businesses can tailor their strategies to boost customer satisfaction, loyalty, and revenue.
 
 ## Dataset Description
-THe dataset is available [here](https://archive.ics.uci.edu/dataset/502/online+retail+ii). This Online Retail II data set contains all the transactions occurring for a UK-based and registered, non-store online retail between 01/12/2009 and 09/12/2011.The company mainly sells unique all-occasion gift-ware. Many customers of the company are wholesalers.
+The dataset is available [here](https://archive.ics.uci.edu/dataset/502/online+retail+ii). This Online Retail II data set contains all the transactions occurring for a UK-based and registered, non-store online retail between 01/12/2009 and 09/12/2011.The company mainly sells unique all-occasion gift-ware. Many customers of the company are wholesalers.
 
 #### Some Additional Information : 
 
